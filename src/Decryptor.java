@@ -3,9 +3,9 @@ public class Decryptor {
 
     public static void main(String[] args) {
         System.out.println("Decrypted text:  " + decript(
-                "L.8q?!'z[nuet5]X>gb\"ox(2iAh%W#YRF@TvsBw;4KUNJdO7/c$I1+f )yk}|,{0Q`3P^G&Vjr*6_DC-aEZ9pM=:\\HlSm<",
-                "?AJyBi{:AXB]D\"Q9FZ_}K#|yeX}kb|$Zwp{g@Y]#}\\YM?=<XN2",
-                9562347));
+                "5`#M^2?gD.(zHr@ByiKPm,_lb{<3X$j9-t*[78\"\\uFCvoA) LIx:+>WOYNfS6]pn1GZe;R&qJEk4%0=h}cws'|a!d/UQTV",
+                ",R$3+\"(R0vuD]I_{5Q",
+                9264875));
     }
 
     public static String decript(String alf, String input, int digitKey) {
@@ -13,12 +13,14 @@ public class Decryptor {
         String output = "";
         String keyString = Integer.toString(digitKey);
         int keyLength = keyString.length();
+
         for (int i = 0; i < input.length(); i++) {
             int key = Character.getNumericValue(keyString.charAt(i % keyLength));
 
             output += symbol(input.charAt(i), key, alf);
         }
 
+        output = output.replaceAll(keyString, " ");
         return output;
     }
     public static char symbol(char sim, int key, String alf){

@@ -1,22 +1,29 @@
 public class Encryptor {
 
     public static void main(String[] args) {
-        System.out.println(cript("Convert Double to Integer in Java", 56));
+        System.out.println("Encrypted text:  " + cript("Hello World!", 9264875));
     }
 
-    public static String cript(String input, int key) {
-//        KeyGenerator keyGenerator = new KeyGenerator();
-//        String alf = keyGenerator.keyBuilder();
-//        System.out.println("New Encryption key: " + alf);
+    public static String cript(String input, int digitKey) {
+        System.out.println("Text message:  " + input);
+        KeyGenerator keyGenerator = new KeyGenerator();
+        String alf = keyGenerator.keyBuilder();
+        System.out.println("New Encryption key: " + alf);
         String output = "";
+        String keyString = Integer.toString(digitKey);
+        int keyLength = keyString.length();
+//        String space = "";
+//        for (int i = 0; i < Character.getNumericValue(keyString.charAt(0)); i++) space += " ";
+        input = input.replaceAll(" ", keyString);
         for (int i = 0; i < input.length(); i++) {
-            output += symbol(input.charAt(i), key);
+            int key = Character.getNumericValue(keyString.charAt(i % keyLength));
+
+            output += symbol(input.charAt(i), key, alf);
         }
 
         return output;
     }
-    public static char symbol(char sim, int key){
-        String alf = " !\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~";
+    public static char symbol(char sim, int key, String alf){
         int keyPlus;
         for (int i = 0; i < alf.length(); i++) {
             if (i + key < alf.length()) keyPlus = i + key;
@@ -26,5 +33,4 @@ public class Encryptor {
         return sim;
     }
 }
-//  !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefghijklmnopqrstuvwxyz{|}  Standard key
-
+// " !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefghijklmnopqrstuvwxyz{|}  Standard key"
