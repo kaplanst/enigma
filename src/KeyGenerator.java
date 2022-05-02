@@ -3,11 +3,11 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class KeyGenerator {
-    public static void main(String[] args) {
+    public void main(String[] args) {
         System.out.println(keyBuilder());
     }
 
-    public static String keyBuilder(){
+    public String keyBuilder(){
         String standardKey = " !\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}";
         String newKey = "";
         List<Character>keyList = standardKey.chars().mapToObj(n -> (char)n).collect(Collectors.toList()); //Convert String to char list

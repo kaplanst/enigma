@@ -1,26 +1,26 @@
 public class EncryptorTest {
 
     public static void main(String[] args) {
-        System.out.println(cript("How To Convert Char To Int In Java [With Examples]", 934));
+        System.out.println("Encrypted text:  " + cript("How To Convert Char To Int In Java [With Examples]", 9562347));
     }
 
     public static String cript(String input, int digitKey) {
-//        KeyGenerator keyGenerator = new KeyGenerator();
-//        String alf = keyGenerator.keyBuilder();
-//        System.out.println("New Encryption key: " + alf);
+        System.out.println("Text message:  " + input);
+        KeyGenerator keyGenerator = new KeyGenerator();
+        String alf = keyGenerator.keyBuilder();
+        System.out.println("New Encryption key: " + alf);
         String output = "";
         String keyString = Integer.toString(digitKey);
         int keyLength = keyString.length();
         for (int i = 0; i < input.length(); i++) {
             int key = Character.getNumericValue(keyString.charAt(i % keyLength));
 
-            output += symbol(input.charAt(i), key);
+            output += symbol(input.charAt(i), key, alf);
         }
 
         return output;
     }
-    public static char symbol(char sim, int key){
-        String alf = " !\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~";
+    public static char symbol(char sim, int key, String alf){
         int keyPlus;
         for (int i = 0; i < alf.length(); i++) {
             if (i + key < alf.length()) keyPlus = i + key;
