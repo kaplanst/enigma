@@ -1,7 +1,7 @@
 public class Encryptor {
 
     public static void main(String[] args) {
-        System.out.println("Encrypted text:  " + cript("Hello World!", 9264875));
+        System.out.println("Encrypted text:  " + cript("Hello World,   how are you!", 3249));
     }
 
     public static String cript(String input, int digitKey) {
@@ -14,7 +14,7 @@ public class Encryptor {
         int keyLength = keyString.length();
 //        String space = "";
 //        for (int i = 0; i < Character.getNumericValue(keyString.charAt(0)); i++) space += " ";
-        input = input.replaceAll(" ", keyString);
+        input = input.replaceAll(" ", "!" + keyString + "!");
         for (int i = 0; i < input.length(); i++) {
             int key = Character.getNumericValue(keyString.charAt(i % keyLength));
 

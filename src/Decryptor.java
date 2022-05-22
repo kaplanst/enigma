@@ -20,7 +20,7 @@ public class Decryptor {
             output += symbol(input.charAt(i), key, alf);
         }
 
-        output = output.replaceAll(keyString, " ");
+        output = output.replaceAll("!" + keyString + "!", " ");
         return output;
     }
     public static char symbol(char sim, int key, String alf){
