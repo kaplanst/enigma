@@ -3,9 +3,9 @@ public class Decryptor {
 
     public static void main(String[] args) {
         System.out.println("Decrypted text:  " + decript(
-                "5`#M^2?gD.(zHr@ByiKPm,_lb{<3X$j9-t*[78\"\\uFCvoA) LIx:+>WOYNfS6]pn1GZe;R&qJEk4%0=h}cws'|a!d/UQTV",
-                ",R$3+\"(R0vuD]I_{5Q",
-                9264875));
+                ",5nE\"Yl>m6Xb?Ii<y\\Pv%zj]qD|wH8Z#N1hCOuF9S`V/eroR(Kft&^BGdM*':a[)374 +Ukc2s}$;WL=x-.A_Q@T{gp!J0",
+                "1o>mo0EWCs52}0.(omdn0l}h}0}}nOR8!E}F},}20)foJE2C}\"}s0y(9n",
+                5212022));
     }
 
     public static String decript(String alf, String input, int digitKey) {
