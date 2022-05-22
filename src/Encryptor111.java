@@ -1,14 +1,21 @@
 import java.util.List;
+import java.util.Scanner;
 import java.util.stream.Collectors;
 
 public class Encryptor111 {
 
     public static void main(String[] args) {
-        System.out.println("Encrypted text:  " + cript("Hello World, how are you!", 5212022));
+        Scanner myObj = new Scanner(System.in);  // Create a Scanner object
+        System.out.println("Enter your text");
+        String text = myObj.nextLine();  // Input text
+        System.out.println("Enter digit key");
+        int key = myObj.nextInt();
+        System.out.println("Your text is: " + text);  // Output user input
+        System.out.println("Digit key is: " + key);  // Output user input
+        System.out.println("Encrypted text:  " + encript(text, key));
     }
 
-    public static String cript(String input, int digitKey) {
-        System.out.println("Text message:  " + input);
+    public static String encript(String input, int digitKey) {
         String alf = keyBuilder();
         System.out.println("New Encryption key: " + alf);
         String output = "";
@@ -45,4 +52,4 @@ public class Encryptor111 {
         return newKey;
     }
 }
-// " !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefghijklmnopqrstuvwxyz{|}  Standard key"
+
