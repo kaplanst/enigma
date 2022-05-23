@@ -1,11 +1,19 @@
+package drafts;
+
+import java.util.Scanner;
+
 public class Decryptor {
 
 
     public static void main(String[] args) {
-        System.out.println("Decrypted text:  " + decript(
-                ",5nE\"Yl>m6Xb?Ii<y\\Pv%zj]qD|wH8Z#N1hCOuF9S`V/eroR(Kft&^BGdM*':a[)374 +Ukc2s}$;WL=x-.A_Q@T{gp!J0",
-                "1o>mo0EWCs52}0.(omdn0l}h}0}}nOR8!E}F},}20)foJE2C}\"}s0y(9n",
-                5212022));
+        Scanner inputData = new Scanner(System.in);  // Create a Scanner object
+        System.out.println("Input alphabetic key:");
+        String alf = inputData.nextLine();
+        System.out.println("Input text:");
+        String input = inputData.nextLine();
+        System.out.println("Input digit key:");
+        int key = inputData.nextInt();
+        System.out.println("Decrypted text:  " + decript(alf, input, key));
     }
 
     public static String decript(String alf, String input, int digitKey) {

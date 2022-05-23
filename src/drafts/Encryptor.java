@@ -1,3 +1,7 @@
+package drafts;
+
+import drafts.KeyGenerator;
+
 public class Encryptor {
 
     public static void main(String[] args) {
