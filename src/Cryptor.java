@@ -14,12 +14,7 @@ public class Cryptor {
             System.out.println("Encrypt or Decrypt (E/D)");
             objective = inputData.nextLine();
         }
-
-        System.out.println("Input Crypto key key");
-        String alf = inputData.nextLine();
-
-     //   String alf = keyBuilder();
-
+        String alf = "";
         System.out.println("Enter your text");
         String text = inputData.nextLine();  // Input text
         System.out.println("Enter digit key");
@@ -28,18 +23,33 @@ public class Cryptor {
         System.out.println("Digit key is: " + key);  // Output user input
 
         if (objective.equals("E")) {
-            System.out.println("Crypto key, Generate a new one or use an existing one (N/E)");
-            System.out.println("Encrypted text: " + encript(alf, text, key));
+            System.out.println("Generate a new Crypto key or use an existing one (N/E)");
+            inputData = new Scanner(System.in);
+            String newKey = inputData.nextLine();
+            while (!newKey.equals("E") || !newKey.equals("N")) {
+                if (newKey.equals("N")) {
+                    alf = keyBuilder();
+                    break;}
+                if (newKey.equals("E")) {
+                    System.out.println("Input Crypto key");
+                    alf = inputData.nextLine();
+                    break;}
+                System.out.println("Crypto key <<" + alf + ">>");
+
+            }
+            System.out.println("Encrypted text: <<" + encript(alf, text, key) + ">>");
         }
         if (objective.equals("D")) {
-
+            System.out.println("Input Crypto key");
+            inputData = new Scanner(System.in);
+            alf = inputData.nextLine();
             System.out.println("Decrypted text: <<" + decrypt(alf, text, key) + ">>");
         }
 
     }
 
     public static String encript(String alf, String input, int digitKey) {
-        System.out.println("New Encryption key: " + alf);
+        System.out.println("New Encryption key: <<" + alf + ">>");
         String output = "";
         String keyString = Integer.toString(digitKey);
         int keyLength = keyString.length();
