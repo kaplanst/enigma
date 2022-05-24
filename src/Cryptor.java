@@ -19,9 +19,6 @@ public class Cryptor {
         String text = inputData.nextLine();  // Input text
         System.out.println("Enter digit key");
         int key = inputData.nextInt();
-        System.out.println("Your text is: <<" + text + ">>");  // Output user input
-        System.out.println("Digit key is: " + key);  // Output user input
-
         if (objective.equals("E")) {
             System.out.println("Generate a new Crypto key or use an existing one (N/E)");
             inputData = new Scanner(System.in);
@@ -35,16 +32,21 @@ public class Cryptor {
                     alf = inputData.nextLine();
                     break;}
                 System.out.println("Crypto key <<" + alf + ">>");
-
             }
-            System.out.println("Encrypted text: <<" + encript(alf, text, key) + ">>");
+//            System.out.println("Your text is: <<" + text + ">>");  // Output user input
+//            System.out.println("Digit key is: " + key);  // Output user input
+//            System.out.println("Encrypted text: <<" + encript(alf, text, key) + ">>");
         }
         if (objective.equals("D")) {
             System.out.println("Input Crypto key");
             inputData = new Scanner(System.in);
             alf = inputData.nextLine();
-            System.out.println("Decrypted text: <<" + decrypt(alf, text, key) + ">>");
         }
+            System.out.println("Crypto key <<" + alf + ">>");
+            System.out.println("Your text is: <<" + text + ">>");  // Output user input
+            System.out.println("Digit key is: " + key);  // Output user input
+            System.out.println("Decrypted text: <<" + decrypt(alf, text, key) + ">>");
+      //  }
 
     }
 

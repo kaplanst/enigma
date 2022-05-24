@@ -1,5 +1,7 @@
 import java.util.Scanner;
 
+import static java.time.Clock.system;
+
 public class TestClass {
     public static void main(String[] args) {
         Scanner inputData = new Scanner(System.in);  // Create a Scanner object
@@ -13,7 +15,8 @@ public class TestClass {
 
         System.out.println("Number " + number);
         System.out.println("Simple " + simple);
-
+        System.out.print("\033[H\033[2J");
+        System.out.flush();
     }
 
 }
